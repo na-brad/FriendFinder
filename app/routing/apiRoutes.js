@@ -7,7 +7,6 @@ module.exports = function (app) {
         res.json(friends)
     });
     app.post("/api/friends", function (req, res) {
-        friends.push(req.body);
         var userInput = req.body.scores;
         console.log(userInput);
 
@@ -30,6 +29,7 @@ module.exports = function (app) {
                 index = i;
             }
         };
+        friends.push(req.body);
         res.json(friends[index]);
     });
 }
